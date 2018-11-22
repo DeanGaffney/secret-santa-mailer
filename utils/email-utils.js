@@ -1,3 +1,13 @@
+const winston = require('winston');
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports:[
+        new winston.transports.File({ filename: 'error.log', level: 'error'}),
+        new winston.transports.File({ filename: 'combined.log'})
+    ]
+});
+
 /**
  * Sends emails to the users with their options
  * @param {object} transporter the transporter to use for sending the emails
@@ -5,7 +15,9 @@
  * @param {array} remainingUsers the remaining users to select from
  */
 function sendEmails(transporter, users, remainingUsers) {
+    logger.info('Generated Users with Options:\n');
     generateUserOptions(users, remainingUsers).forEach((user) => {
+        logger.info(user);
         sendEmail(transporter, getEmailOptions(user));
     });
 }
@@ -18,9 +30,9 @@ function sendEmails(transporter, users, remainingUsers) {
 function sendEmail(transporter, mailOptions){
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
-            console.error(err);
+            logger.error(err);
         } else {
-            console.log(info);
+            logger.info(info);
         }
     });
 }
