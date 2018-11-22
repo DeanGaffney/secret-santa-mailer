@@ -2,9 +2,6 @@
 
 A Node.js application which pairs users together and sends emails to the secret santa's with the name of the person they must buy a gift for.
 
-## Setup
-To run the application perfrom the following steps:
-
 ## Dependencies
 Run the following commands to retrieve dependencies
 ```code
@@ -24,7 +21,7 @@ To specify the users you want involved do the following:
 $ cd data/
 $ touch users.json
 ```
-Inside the data folder there is ***users.schema.json*** file which shows you the json array schema for your users to follow. It a is a json array of objects contianing a ***'name'*** key and an ***'email'*** key. Fill in the newly created ***users.json*** file with your desired users following the structure shown in the ***users.schema.json*** file.
+Inside the data folder there is ***users.schema.json*** file which shows you the json array schema for your users to follow. It is a json array of objects containing a ***'name'*** key and an ***'email'*** key. Fill in the newly created ***users.json*** file with your desired users following the structure shown in the ***users.schema.json*** file.
 
 ## Setting Environment Variables
 In the root of the project create a ***.env*** file based off of the supplied ***.env.schmea*** file. Add in the following environment variables.
