@@ -69,7 +69,7 @@ function getRandomUser(user, remainingUsers) {
  */
 function createTransporter(nodemailer) {
     return nodemailer.createTransport(
-        `smtps://${process.env.EMAIL_USER}${encodeURIComponent('@')}gmail.com:${process.env
+        `smtps://${encodeURIComponent(process.env.EMAIL_ADDRESS)}:${process.env
             .EMAIL_PASSWORD}@smtp.gmail.com`
     );
 }
@@ -80,7 +80,7 @@ function createTransporter(nodemailer) {
  */
 function getEmailOptions(user) {
     return {
-        from: process.env.EMAIL_SENDER,
+        from: process.env.EMAIL_ADDRESS,
         to: user.email,
         subject: getEmailSubject(),
         html: getEmailHtml(user)

@@ -1,3 +1,48 @@
 # Secret Santa Mailer
 
 A Node.js application which pairs users together and sends emails to the secret santa's with the name of the person they must buy a gift for.
+
+## Setup
+To run the application perfrom the following steps:
+
+## Dependencies
+Run the following commands to retrieve dependencies
+```code
+$ git clone https://github.com/DeanGaffney/secret-santa-mailer.git
+$ cd secret-santa-mailer
+$ npm install
+```
+Run the following to make sure everything is working as expected:
+```code
+$ npm test
+```
+All the tests should pass.
+
+## Specifying Users
+To specify the users you want involved do the following:
+```code
+$ cd data/
+$ touch users.json
+```
+Inside the data folder there is ***users.schema.json*** file which shows you the json array schema for your users to follow. It a is a json array of objects contianing a ***'name'*** key and an ***'email'*** key. Fill in the newly created ***users.json*** file with your desired users following the structure shown in the ***users.schema.json*** file.
+
+## Setting Environment Variables
+In the root of the project create a ***.env*** file based off of the supplied ***.env.schmea*** file. Add in the following environment variables.
+
+* EMAIL_ADDRESS=sample@gmail.com  (the email address to use for sending the emails to other users)
+* EMAIL_PASSWORD=password        (the password for the email address sending the emails)
+* EMAIL_SERVICE=gmail             (the service used for sending the emails)
+
+## Running the script
+Once you have your ***users.json*** file and ***.env*** file in place you can run the program by running the following:
+```code
+$ npm start
+```
+
+## Logs
+Two logs are generated in the root of the project once the program is run.
+* ***combined.log***  - logs the json objects representing each user and the other user they were paired with. A log of the acceptance of the emails from each user is also logged into this file. It's a good idea to check this file after running to make sure every user has been included correctly.
+* ***error.log*** - in the event an error occurs due to an invalid email address or the rejection of an email for another reason, the error will be logged into this file.
+
+## Notes
+The code is currently only tested using ***gmail*** as a service.

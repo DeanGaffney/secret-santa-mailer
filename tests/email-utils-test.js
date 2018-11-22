@@ -11,9 +11,7 @@ describe('test the email utils', () => {
 		users = require('./resources/test-users.json');
 		remainingUsers = [ ...users ];
 
-		process.env.EMAIL_SENDER = 'sample@gmail.com';
-		process.env.EMAIL_SENDER = 'sender';
-		process.env.EMAIL_USER = 'user';
+		process.env.EMAIL_ADDRESS = 'sample@gmail.com';
 		process.env.EMAIL_PASSWORD = 'password';
 		process.env.EMAIL_SERVICE = 'gmail';
 		done();
@@ -31,7 +29,7 @@ describe('test the email utils', () => {
 		expect(emailOptions).to.has.property('html');
 
 		// check the email values
-		expect(emailOptions.from).to.be.eq(process.env.EMAIL_SENDER);
+		expect(emailOptions.from).to.be.eq(process.env.EMAIL_ADDRESS);
 		expect(emailOptions.to).to.be.eq(user.email);
 		expect(emailOptions.subject).to.be.eq(emailUtils.getEmailSubject());
 		expect(emailOptions.html).to.be.eq(emailUtils.getEmailHtml(user));
