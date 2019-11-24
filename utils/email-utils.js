@@ -1,3 +1,4 @@
+const path = require('path');
 const winston = require('winston');
 const logger = winston.createLogger({
     level: 'info',
@@ -83,7 +84,8 @@ function getEmailOptions(user) {
         from: process.env.EMAIL_ADDRESS,
         to: user.email,
         subject: getEmailSubject(),
-        html: getEmailHtml(user)
+        html: getEmailHtml(user),
+        attachments: getAttachments(user)
     };
 }
 
@@ -99,7 +101,19 @@ function getEmailSubject(){
  * @param {object} user the user object to use in the html
  */
 function getEmailHtml(user) {
-    return `<p>${user.option.name}</p>`
+    return `<h1>Secret Santa!</h1>
+    <p>Ho Ho Ho!! Your secret santa this year is <strong>${user.option.name}</strong></p>
+    <img src="cid:${user.option.email}"/>
+    `
+}
+
+function getAttachments(user) {
+    const filePath = path.join(__dirname, `../images/${user.option.name}.jpg`);
+    return [{
+        filename: `${user.option.name}.jpg`,
+        path: filePath,
+        cid: `${user.option.email}`
+    }]
 }
 
 module.exports = {
@@ -110,5 +124,6 @@ module.exports = {
     getEmailOptions: getEmailOptions,
     getEmailSubject: getEmailSubject,
     getEmailHtml: getEmailHtml,
+    getAttachments,
     sendEmail: sendEmail
 };

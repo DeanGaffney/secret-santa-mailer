@@ -27,6 +27,14 @@ $ touch users.json
 ```
 Inside the data folder there is ***users.schema.json*** file which shows you the json array schema for your users to follow. It is a json array of objects containing a ***'name'*** key and an ***'email'*** key. Fill in the newly created ***users.json*** file with your desired users following the structure shown in the ***users.schema.json*** file.
 
+## Attaching Images
+To attach an image of the user to the email do the following:
+* Create an images folder in the root of the project with the following command:
+    ```code
+    $ mkdir images
+    ```
+* Copy the desired images into the `images` folder where each image is named in the following format `name.jpg` i.e the image is the user's name in the `users.json` file.
+
 ## Setting Environment Variables
 In the root of the project create a ***.env*** file based off of the supplied ***.env.schmea*** file. Add in the following environment variables.
 

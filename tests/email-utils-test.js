@@ -42,7 +42,8 @@ describe('test the email utils', () => {
 	it('test email html', () => {
 		let user = users[0];
 		user.option = remainingUsers[1];
-		expect(emailUtils.getEmailHtml(user)).to.be.eq(`<p>${user.option.name}</p>`);
+		const html = emailUtils.getEmailHtml(user).replace(/\n\t/g, '').replace(/\s{2}/g, '').trim();
+		expect(html).to.be.eq(`<h1>Secret Santa!</h1> <p>Ho Ho Ho!! Your secret santa this year is <strong>${user.option.name}</strong></p> <img src="cid:${user.option.email}"/>`);
 	});
 
 	it('test getting random user', () => {
