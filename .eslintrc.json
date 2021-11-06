@@ -2,6 +2,7 @@
   "extends": "airbnb-base",
   "rules" : {
     "import/no-extraneous-dependencies": ["off"],
+    "no-tabs": "off",
     "comma-dangle": ["error", {
       "arrays": "only-multiline",
       "objects": "only-multiline",
