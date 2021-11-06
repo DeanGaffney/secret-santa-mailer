@@ -1,5 +1,7 @@
 data/users.json
+data/users.test.json
 node_modules/
 .env
 *.log
 images/
+.DS_Store
