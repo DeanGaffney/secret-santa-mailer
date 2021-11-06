@@ -1,6 +1,6 @@
 # Secret Santa Mailer
-[![Known Vulnerabilities](https://snyk.io/test/github/DeanGaffney/secret-santa-mailer.git/badge.svg)](https://snyk.io/test/github/DeanGaffney/secret-santa-mailer.git) [![Build Status](https://travis-ci.com/DeanGaffney/secret-santa-mailer.svg?branch=master)](https://travis-ci.com/DeanGaffney/secret-santa-mailer)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/DeanGaffney/secret-santa-mailer.git/badge.svg)](https://snyk.io/test/github/DeanGaffney/secret-santa-mailer.git)
+[![Node.js CI](https://github.com/DeanGaffney/secret-santa-mailer/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/DeanGaffney/secret-santa-mailer/actions/workflows/node.js.yml)
 
 
 
