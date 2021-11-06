@@ -36,12 +36,21 @@ To attach an image of the user to the email do the following:
 * Copy the desired images into the `images` folder where each image is named in the following format `name.jpg` i.e the image is the user's name in the `users.json` file.
 
 ## Setting Environment Variables
-In the root of the project create a ***.env*** file based off of the supplied ***.env.schmea*** file. Add in the following environment variables.
+In the root of the project create a ***.env*** file based off of the supplied ***.env.schema*** file. Add in the following environment variables.
 
 * EMAIL_ADDRESS=sample@gmail.com  (the email address to use for sending the emails to other users)
 * EMAIL_PASSWORD=password        (the password for the email address sending the emails)
 * EMAIL_SERVICE=gmail             (the service used for sending the emails)
 
+### Gmail Password
+* It's recommended that you generate an `App Password` and use that instead of your email password.
+* Using an App Password will allow you to keep 2FA enabled on your account, and prevent you from having to allow less secure apps interact with your google account.
+* To generate an App Password do the following
+  * Go to `https://myaccount.google.com/security`
+  * Go to `Signing in to Google`
+  * Go to `App Passwords`
+  * Generate an App Password
+  * Use this password for your `EMAIL_PASSWORD` environment variable.
 ## Running the script
 Once you have your ***users.json*** file and ***.env*** file in place you can run the program by running the following:
 ```code
