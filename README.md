@@ -36,7 +36,7 @@ To attach an image of the user to the email do the following:
 * Copy the desired images into the `images` folder where each image is named in the following format `name.jpg` i.e the image is the user's name in the `users.json` file.
 
 ## Setting Environment Variables
-In the root of the project create a ***.env*** file based off of the supplied ***.env.schema*** file. Add in the following environment variables.
+In the root of the project create a ***.env*** file based off the supplied ***.env.schema*** file. Add in the following environment variables.
 
 * EMAIL_ADDRESS=sample@gmail.com  (the email address to use for sending the emails to other users)
 * EMAIL_PASSWORD=password        (the password for the email address sending the emails)
